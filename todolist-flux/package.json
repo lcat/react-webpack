@@ -1,19 +1,22 @@
 {
-  "name": "dropdown",
-  "version": "1.0.1",
-  "description": "下拉选择",
+  "name": "todolist-flux",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build"
   },
-  "keywords": ["react", "dropdown"],
-  "author": "lcat",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
-    "classnames": "^2.2"
+    "flux": "^2.1.1",
+    "classnames": "^2.2",
+    "keymirror": "~0.1.0",
+    "object-assign": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^5",
@@ -21,7 +24,9 @@
     "babel-loader": "^5",
     "babel-preset-react": "^6.3.13",
     "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
     "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   }
