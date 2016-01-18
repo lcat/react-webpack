@@ -1,6 +1,7 @@
 import React from 'react';
+import TodoActions from '../actions/todoAction.js'
 import TodoTetxInput from './todoTextInput.js';
-import classNames from 'classNames';
+import classNames from 'classnames';
 
 class TodoItem extends React.Component {
 
@@ -11,21 +12,31 @@ class TodoItem extends React.Component {
       isEditing: false
     }
 
+    this._onSave = this._onSave.bind(this);
     this._onToggleComplete = this._onToggleComplete.bind(this);
     this._onDoubleClick = this._onDoubleClick.bind(this);
     this._onDestroyClick = this._onDestroyClick.bind(this);
   }
 
-  _onToggleComplete() {
+  _onSave(text) {
+    TodoActions.updateText(this.props.todo.id, text);
+    this.setState({
+      isEditing: false
+    })
+  }
 
+  _onToggleComplete() {
+    TodoActions.toggleComplete(this.props.todo);
   }
 
   _onDoubleClick() {
-
+    this.setState({
+      isEditing: true
+    })
   }
 
   _onDestroyClick() {
-
+    TodoActions.destroy(this.props.todo.id);
   }
 
   render() {

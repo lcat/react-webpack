@@ -1,15 +1,6 @@
 import AppDispatcher from '../dispatcher/appDispatcher.js';
 
 import TodoConstants from '../constants/todoConstants.js';
-var tmp = {
-  TODO_CREATE: null,
-  TODO_COMPLETE: null,
-  TODO_DESTROY: null,
-  TODO_DESTROY_COMPLETED: null,
-  TODO_TOGGLE_COMPLETE_ALL: null,
-  TODO_UNDO_COMPLETE: null,
-  TODO_UPDATE_TEXT: null
-}
 
 var TodoActions = {
   create: function(text) {
@@ -36,7 +27,7 @@ var TodoActions = {
       actionType: actionType,
       id: id
     })
-  }
+  },
 
   toggleCompleteAll: function() {
     AppDispatcher.dispatch({
@@ -49,7 +40,7 @@ var TodoActions = {
       actionType: TodoConstants.TODO_DESTROY,
       id: id
     })
-  }
+  },
 
   destroyCompleted: function() {
     AppDispatcher.dispatch({
